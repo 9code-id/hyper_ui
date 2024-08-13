@@ -8,7 +8,6 @@ class CgContainerView extends StatefulWidget {
 
   Widget build(context, CgContainerController controller) {
     controller.view = this;
-    var cursor1;
 
     return Scaffold(
       appBar: AppBar(

@@ -1,4 +1,4 @@
-//#TEMPLATE reuseable_image_picker
+//#TEMPLATE reuseable_multi_image_picker
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ enum AttachmentType {
 }
 
 class QFilesPicker extends StatefulWidget {
-  QFilesPicker({
+  const QFilesPicker({
     required this.label,
     required this.onChanged,
     super.key,
@@ -59,7 +59,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
       allowMultiple: true,
       compressionQuality: 1,
     );
-    if (result == null) return null;
+    if (result == null) return;
 
     loading = true;
     setState(() {});
@@ -114,7 +114,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
       return LayoutBuilder(builder: (context, constraints) {
         int axisCount = (constraints.biggest.width / 160.0).floor();
         return GridView.builder(
-          padding: EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(12.0),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             childAspectRatio: 1.0,
             crossAxisCount: axisCount,
@@ -123,12 +123,12 @@ class _QFilesPickerState extends State<QFilesPicker> {
           ),
           itemCount: selectedFiles.length,
           shrinkWrap: true,
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             var file = selectedFiles[index];
             return Container(
               clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(
                   Radius.circular(12.0),
                 ),
@@ -137,7 +137,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                 children: [
                   if (widget.attachmentType == AttachmentType.image)
                     Image.network(
-                      "${file}",
+                      file,
                       width: 200.0,
                       height: 200.0,
                       fit: BoxFit.cover,
@@ -154,7 +154,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "${file.split("/").last}",
+                            file.split("/").last,
                             textAlign: TextAlign.center,
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
@@ -167,7 +167,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                             height: 4.0,
                           ),
                           Text(
-                            "${file.split("/").last.split(".").last}",
+                            file.split("/").last.split(".").last,
                             textAlign: TextAlign.center,
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
@@ -192,7 +192,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                         child: CircleAvatar(
                           radius: 12.0,
                           backgroundColor: Colors.black.withOpacity(0.6),
-                          child: Icon(
+                          child: const Icon(
                             Icons.close,
                             color: Colors.white,
                             size: 12.0,
@@ -211,19 +211,19 @@ class _QFilesPickerState extends State<QFilesPicker> {
     return InkWell(
       onTap: browseFile,
       child: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           bottom: 12,
         ),
         child: Column(
           children: [
             Container(
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minHeight: 120,
               ),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.grey[300],
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(12.0),
                 ),
               ),
@@ -235,7 +235,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                       if (selectedFiles.isEmpty)
                         Container(
                           width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.only(
+                          margin: const EdgeInsets.only(
                             top: 30.0,
                           ),
                           child: Column(
@@ -245,7 +245,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                                 size: 54.0,
                                 color: Colors.grey[600],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 12.0,
                               ),
                             ],
@@ -262,13 +262,13 @@ class _QFilesPickerState extends State<QFilesPicker> {
                           ),
                           decoration: BoxDecoration(
                             color: primaryColor,
-                            borderRadius: BorderRadius.all(
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(12.0),
                             ),
                           ),
                           child: Text(
-                            "${widget.extensions.join(",")}",
-                            style: TextStyle(
+                            widget.extensions.join(","),
+                            style: const TextStyle(
                               fontSize: 12.0,
                               color: Colors.white,
                             ),
@@ -281,7 +281,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                     transform: Matrix4.translationValues(0.0, -6, 0),
                     child: Text(
                       loading ? "Uploading..." : "*click to upload file(s)",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12.0,
                       ),
                     ),
@@ -289,7 +289,7 @@ class _QFilesPickerState extends State<QFilesPicker> {
                   if (loading)
                     Container(
                       transform: Matrix4.translationValues(0.0, -6, 0),
-                      child: LinearProgressIndicator(),
+                      child: const LinearProgressIndicator(),
                     ),
                 ],
               ),
