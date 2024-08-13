@@ -53,8 +53,8 @@ void findUrls(Directory directory) async {
             print(url);
 
             await downloadFileWithCurl(
-                url, "${Directory.current.path}\\contoh.png");
-            var f = File("${Directory.current.path}\\contoh.png");
+                url, "${Directory.current.path}\\temp.png");
+            var f = File("${Directory.current.path}\\temp.png");
 
             final formData = FormData.fromMap({
               'file': MultipartFile.fromBytes(
