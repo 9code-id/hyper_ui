@@ -1,1 +1,1 @@
-flutter build web && cd build/web && vercel link --yes --project hyper-ui && vercel --prod
+flutter build web && cd build/web && vercel link --yes --project hui && vercel --prod
