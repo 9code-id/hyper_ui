@@ -398,7 +398,7 @@ class WebDashboardView extends StatefulWidget {
                     "user": "Tony",
                     "time": randomDate,
                     "image":
-                        "https://cdn-icons-png.flaticon.com/128/8358/8358757.png",
+                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556486/nvmcgeesemogzqr9y8bs.png",
                     "amount": 145000,
                   },
                   {
@@ -406,7 +406,7 @@ class WebDashboardView extends StatefulWidget {
                     "user": "Jeremy",
                     "time": randomDate,
                     "image":
-                        "https://cdn-icons-png.flaticon.com/128/1790/1790213.png",
+                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556488/qpfb8bhkbc3xroaf0wvu.png",
                     "amount": 230000,
                   },
                   {
@@ -414,7 +414,7 @@ class WebDashboardView extends StatefulWidget {
                     "user": "Vine",
                     "time": randomDate,
                     "image":
-                        "https://cdn-icons-png.flaticon.com/128/8358/8358757.png",
+                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556486/nvmcgeesemogzqr9y8bs.png",
                     "amount": 25000,
                   },
                   {
@@ -422,7 +422,7 @@ class WebDashboardView extends StatefulWidget {
                     "user": "Jacob",
                     "time": randomDate,
                     "image":
-                        "https://cdn-icons-png.flaticon.com/128/8358/8358757.png",
+                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556486/nvmcgeesemogzqr9y8bs.png",
                     "amount": 300000,
                   },
                   {
@@ -430,7 +430,7 @@ class WebDashboardView extends StatefulWidget {
                     "user": "Alex",
                     "time": randomDate,
                     "image":
-                        "https://cdn-icons-png.flaticon.com/128/1790/1790213.png",
+                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556488/qpfb8bhkbc3xroaf0wvu.png",
                     "amount": 125000,
                   },
                 ];

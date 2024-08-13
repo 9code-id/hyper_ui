@@ -19,7 +19,7 @@ class UkDashboard3View extends StatefulWidget {
                 Row(
                   children: [
                     Image.network(
-                      "https://cdn-icons-png.flaticon.com/128/871/871394.png",
+                      "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556484/e7ykmcywesvogxfs95ja.png",
                       width: 32.0,
                       height: 32.0,
                       fit: BoxFit.cover,

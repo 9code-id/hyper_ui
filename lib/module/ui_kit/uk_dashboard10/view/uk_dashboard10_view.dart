@@ -248,7 +248,7 @@ class UkDashboard10View extends StatefulWidget {
                   {
                     "label": "Send Money",
                     "photo":
-                        "https://cdn-icons-png.flaticon.com/128/9405/9405698.png",
+                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556481/mmgj4q7ytki1bdnk9x0s.png",
                     "amount": 17000,
                     "note": "John Alex",
                   }
