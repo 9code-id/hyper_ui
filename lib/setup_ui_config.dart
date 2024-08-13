@@ -9,6 +9,13 @@ setupHUIConfig() {
       view: const WebDashboardView(),
     ),
     MenuItem(
+      icon: MdiIcons.github,
+      label: "GitHub",
+      onTap: () {
+        launchUrl(Uri.parse("https://github.com/9code-id/hyper_ui"));
+      },
+    ),
+    MenuItem(
       label: "Widgets",
       separator: true,
     ),
