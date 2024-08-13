@@ -22,5 +22,32 @@ class TemplateScaffoldSimple extends StatelessWidget {
       ),
     );
     //#END
+    /*
+    //#TEMPLATE appbar_white
+    appBar: AppBar(
+      backgroundColor: Colors.white,
+      titleTextStyle: const TextStyle(
+        color: Colors.black,
+        fontSize: 16.0,
+        fontWeight: FontWeight.bold,
+      ),
+      centerTitle: true,
+      iconTheme: const IconThemeData(
+        color: Colors.black,
+      ),
+      title: const Text("PageTitle"),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.search,
+            size: 24.0,
+            color: Colors.black,
+          ),
+        ),
+      ],
+    ),
+    //#END
+    */
   }
 }
