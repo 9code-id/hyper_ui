@@ -54,13 +54,12 @@ void findUrls(Directory directory) async {
 
             await downloadFileWithCurl(
                 url, "${Directory.current.path}\\contoh.png");
-            var f = File("contoh.png");
-            f.createSync(recursive: true);
+            var f = File("${Directory.current.path}\\contoh.png");
 
             final formData = FormData.fromMap({
               'file': MultipartFile.fromBytes(
                 f.readAsBytesSync(),
-                filename: "upload.${f.path.split(".").last}",
+                filename: f.path.split('\\').last,
               ),
               'upload_preset': _CLOUDINARY_UPLOAD_PRESET,
               'api_key': _CLOUDINARY_API_KEY,

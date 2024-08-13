@@ -216,35 +216,35 @@ class UkDashboard10View extends StatefulWidget {
                   {
                     "label": "Bank Transfer",
                     "photo":
-                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556183/brguopgtk67gnkfjhxow.png",
+                        "https://cdn-icons-png.flaticon.com/128/2830/2830289.png",
                     "amount": -15000,
                     "note": "Google Play Account",
                   },
                   {
                     "label": "Bank Transfer",
                     "photo":
-                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556183/brguopgtk67gnkfjhxow.png",
+                        "https://cdn-icons-png.flaticon.com/128/2830/2830289.png",
                     "amount": -8000,
                     "note": "Firebase Console",
                   },
                   {
                     "label": "Topup",
                     "photo":
-                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556186/oflarwspskng9codzvr5.png",
+                        "https://cdn-icons-png.flaticon.com/128/15526/15526118.png",
                     "amount": 12000,
                     "note": "#TP10001",
                   },
                   {
                     "label": "Topup",
                     "photo":
-                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556186/oflarwspskng9codzvr5.png",
+                        "https://cdn-icons-png.flaticon.com/128/15526/15526118.png",
                     "amount": 17000,
                     "note": "#TP10001",
                   },
                   {
                     "label": "Send Money",
                     "photo":
-                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556481/mmgj4q7ytki1bdnk9x0s.png",
+                        "https://cdn-icons-png.flaticon.com/128/11005/11005288.png",
                     "amount": 17000,
                     "note": "John Alex",
                   }
