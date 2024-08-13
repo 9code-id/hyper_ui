@@ -163,49 +163,49 @@ class _TemplateNavigationTabViewState extends State<TemplateNavigationTabView>
                     List menus = [
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/878/878052.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556093/hqy71eswdpf2wel9csci.png",
                         "label": "Burger",
                         "onTap": () {},
                       },
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/3595/3595455.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556095/j3mxke5wfefel9ie1oao.png",
                         "label": "Pizza",
                         "onTap": () {},
                       },
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/2718/2718224.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556097/r79lsd6tatp5gsrgknp0.png",
                         "label": "Noodles",
                         "onTap": () {},
                       },
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/8060/8060549.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556099/bjgaxv8gbszthfp47u8b.png",
                         "label": "Meat",
                         "onTap": () {},
                       },
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/454/454570.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556100/rhkhdyztdokhfvoewobs.png",
                         "label": "Soup",
                         "onTap": () {},
                       },
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/2965/2965567.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556101/xspxvwg47fb2gsskai9s.png",
                         "label": "Dessert",
                         "onTap": () {},
                       },
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/2769/2769608.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556102/cfkqasilzemyyhehrbag.png",
                         "label": "Drink",
                         "onTap": () {},
                       },
                       {
                         "icon":
-                            "https://cdn-icons-png.flaticon.com/128/1037/1037855.png",
+                            "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556104/ejbfakenzmpobcfwc5mu.png",
                         "label": "Others",
                         "onTap": () {},
                       },

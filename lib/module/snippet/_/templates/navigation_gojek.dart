@@ -1064,7 +1064,7 @@ class HomeContent extends StatelessWidget {
                 Row(
                   children: [
                     Image.network(
-                      "https://cdn-icons-png.flaticon.com/128/2830/2830305.png",
+                      "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556151/qtomd3y2w00swztco9ma.png",
                       width: 30,
                     ),
                     SizedBox(

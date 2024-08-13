@@ -21,11 +21,11 @@ class TdDashboardController extends State<TdDashboardView> {
   List<Map<String, dynamic>> todoList = [
     {
       "id": 1,
-      "photo": "https://cdn-icons-png.flaticon.com/128/1436/1436664.png",
+      "photo": "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556085/qdb985puypohmywe2vba.png",
     },
     {
       "id": 2,
-      "photo": "https://cdn-icons-png.flaticon.com/128/2936/2936719.png",
+      "photo": "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556086/k3m1rotmerp1xdadridl.png",
       "todo_name": "Website",
     },
   ];
@@ -33,7 +33,7 @@ class TdDashboardController extends State<TdDashboardView> {
   List<Map<String, dynamic>> ongoingTodolist = [
     {
       "id": 1,
-      "photo": "https://cdn-icons-png.flaticon.com/128/1436/1436664.png",
+      "photo": "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556085/qdb985puypohmywe2vba.png",
       "todo_name": "Mobile App",
       "images": [
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
@@ -44,7 +44,7 @@ class TdDashboardController extends State<TdDashboardView> {
     },
     {
       "id": 2,
-      "photo": "https://cdn-icons-png.flaticon.com/128/2936/2936719.png",
+      "photo": "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556086/k3m1rotmerp1xdadridl.png",
       "todo_name": "Website",
       "images": [
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
@@ -55,7 +55,7 @@ class TdDashboardController extends State<TdDashboardView> {
     },
     {
       "id": 3,
-      "photo": "https://cdn-icons-png.flaticon.com/128/1478/1478956.png",
+      "photo": "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556091/fj7lljnsctrwmqjgzfiy.png",
       "todo_name": "Backend",
       "images": [
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",
@@ -66,7 +66,7 @@ class TdDashboardController extends State<TdDashboardView> {
     },
     {
       "id": 4,
-      "photo": "https://cdn-icons-png.flaticon.com/128/2436/2436874.png",
+      "photo": "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723556092/aungqj0lkwjulajzcxju.png",
       "todo_name": "Data Scientist",
       "images": [
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60",

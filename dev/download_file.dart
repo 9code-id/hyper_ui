@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 import 'dart:io';
 
@@ -44,7 +46,8 @@ void findUrls(Directory directory) async {
             url = url.trim();
             print(url);
 
-            await downloadFileWithCurl(url, "contoh.png");
+            await downloadFileWithCurl(
+                url, "${Directory.current.path}\\contoh.png");
             var f = File("contoh.png");
             f.createSync(recursive: true);
 
@@ -62,15 +65,16 @@ void findUrls(Directory directory) async {
               data: formData,
             );
 
+            print("Upload to cloudinary success!");
             print(res.data);
             print('------------');
             print(res.data['secure_url']);
 
             var cloudinaryUrl = res.data['secure_url'];
 
-            var content = sourceFile.readAsStringSync();
-            content = content.replaceAll(url, cloudinaryUrl);
-            sourceFile.writeAsStringSync(content);
+            // var content = sourceFile.readAsStringSync();
+            // content = content.replaceAll(url, cloudinaryUrl);
+            // sourceFile.writeAsStringSync(content);
           }
         }
       }
@@ -81,8 +85,10 @@ void findUrls(Directory directory) async {
 Future<void> downloadFileWithCurl(String url, String savePath) async {
   // Jalankan perintah curl melalui shell
   try {
-    final process = Process.runSync('./dev/download_file.bat', [savePath, url]);
+    final process = Process.runSync(
+        '${Directory.current.path}\\dev\\download_file.bat', [savePath, url]);
   } on Exception catch (err) {
-    print(err);
+    print("ERROR: $savePath");
+    print("ERROR_MESSAGE: $err");
   }
 }
