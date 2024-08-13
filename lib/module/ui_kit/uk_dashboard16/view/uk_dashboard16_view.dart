@@ -152,47 +152,47 @@ class UkDashboard16View extends StatefulWidget {
                     {
                       "label": "Wifi",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/1459/1459402.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560951/zbdg0pr6x7qvhlcennvx.png",
                     },
                     {
                       "label": "Gas",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/4535/4535728.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560953/rvh280ceo9jdvmznhvod.png",
                     },
                     {
                       "label": "Electricity",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/4514/4514764.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560954/gc9i8u4h01873m0lkskn.png",
                     },
                     {
                       "label": "Water",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/2792/2792706.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560955/zwk4aichh3iewwkupavp.png",
                     },
                     {
                       "label": "Mobile",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/3437/3437364.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560957/pvcegyapnxf9nnujxl3u.png",
                     },
                     {
                       "label": "Internet",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/3771/3771521.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560958/ip4rnuiqbpejfbiuyenu.png",
                     },
                     {
                       "label": "Finance",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/781/781831.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560959/wntimpw8sblpk6zhdrz7.png",
                     },
                     {
                       "label": "School",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/2602/2602432.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560961/karm55dm8sryabcwzqak.png",
                     },
                     {
                       "label": "Tax",
                       "image":
-                          "https://cdn-icons-png.flaticon.com/128/1651/1651909.png",
+                          "https://res.cloudinary.com/dotz74j1p/raw/upload/v1723560963/mfdsfkvh9hwpe4qrqugc.png",
                     }
                   ];
                   return SizedBox(
