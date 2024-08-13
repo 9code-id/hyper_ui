@@ -46,46 +46,38 @@ class UkDashboard7View extends StatefulWidget {
                         Align(
                           alignment: Alignment.center,
                           child: Container(
-                            height: 50,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20.0,
-                            ),
-                            margin: const EdgeInsets.symmetric(horizontal: 30.0),
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.6),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(12.0),
-                              ),
-                            ),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                TextField(
-                                  style: TextStyle(
-                                    color: Colors.white,
+                                  height: 50,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20.0,
                                   ),
-                                  decoration: InputDecoration(
-                                    hintText: "Search",
-                                    hintStyle: TextStyle(
-                                      color: Colors.white,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 30.0),
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.6),
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(12.0),
                                     ),
-                                    border: InputBorder.none,
-                                    focusColor: Colors.transparent,
-                                    fillColor: Colors.transparent,
-                                    filled: false,
-                                    hoverColor: Colors.transparent,
-                                    focusedBorder: InputBorder.none,
-                                    enabledBorder: InputBorder.none,
-                                    prefixIcon: Icon(
-                                      Icons.search,
-                                      color: Colors.white,
-                                    ),
+                                    border: Border.all(width: 0.0),
                                   ),
-                                )
-                              ],
-                            ),
-                          ).animate().moveY(
+                                  child: const Center(
+                                    child: TextField(
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                      decoration: InputDecoration.collapsed(
+                                        hintText: "Search",
+                                        hintStyle: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                        border: InputBorder.none,
+                                        focusColor: Colors.transparent,
+                                        fillColor: Colors.transparent,
+                                        filled: false,
+                                        hoverColor: Colors.transparent,
+                                      ),
+                                    ),
+                                  )).animate().moveY(
                                 begin: -100,
                               ),
                         ),

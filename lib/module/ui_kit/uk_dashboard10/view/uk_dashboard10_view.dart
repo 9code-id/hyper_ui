@@ -10,426 +10,285 @@ class UkDashboard10View extends StatefulWidget {
     controller.view = this;
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
+        backgroundColor: Colors.white,
+        titleTextStyle: const TextStyle(
+          color: Colors.black,
+          fontSize: 16.0,
+          fontWeight: FontWeight.bold,
+        ),
+        centerTitle: true,
         iconTheme: const IconThemeData(
-          color: Colors.white,
+          color: Colors.black,
         ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: const Text("Andrew Garfield"),
-              accountEmail: const Text("capek@ngoding.com"),
-              currentAccountPicture: const CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
+        title: const Text("FlutterPay"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Badge(
+              label: Text(
+                "4",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
-              decoration: BoxDecoration(
-                color: Colors.blueGrey[900],
+              child: Icon(
+                Icons.notifications,
+                color: Colors.black,
               ),
-              otherAccountsPictures: const [],
             ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text("Home"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.code),
-              title: const Text("About"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.rule),
-              title: const Text("TOS"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.privacy_tip),
-              title: const Text("Privacy Policy"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.logout,
-              ),
-              title: const Text("Logout"),
-              onTap: () {},
-            )
-          ],
-        ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
-        child: Column(
-          children: [
-            Container(
-              height: 360.0,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                color: Color(0xff0a4964),
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: -60,
-                    top: -90,
-                    child: Transform.rotate(
-                      angle: 0.9,
-                      child: Container(
-                        height: 160,
-                        width: 160,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.1),
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(32.0),
-                          ),
-                        ),
-                      ),
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Container(
+                height: 180.0,
+                clipBehavior: Clip.antiAlias,
+                decoration: const BoxDecoration(
+                  color: Color(0xff2c2c2c),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(
+                      8.0,
                     ),
                   ),
-                  Positioned(
-                    right: -60,
-                    bottom: -60,
-                    child: Transform.rotate(
-                      angle: 0.9,
-                      child: Container(
-                        height: 160,
-                        width: 160,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.1),
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(32.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Explore",
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 30.0,
-                          ),
-                          child: TextField(
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.8),
-                            ),
-                            decoration: InputDecoration(
-                              hintText: 'What are you looking for?',
-                              hintStyle: TextStyle(
-                                color: Colors.white.withOpacity(0.4),
-                              ),
-                              fillColor: Colors.white.withOpacity(0.3),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(32.0),
-                                borderSide: BorderSide(
-                                  color: Colors.grey[300]!,
-                                  width: 0.0,
-                                ),
-                              ),
-                              prefixIcon: Icon(
-                                Icons.search,
-                                color: Colors.white.withOpacity(0.4),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 30.0,
-                        ),
-                        SingleChildScrollView(
-                          controller: ScrollController(),
-                          padding: const EdgeInsets.only(
-                            left: 30.0,
-                          ),
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: List.generate(
-                              controller.menuList.length,
-                              (index) {
-                                var item = controller.menuList[index];
-                                return Container(
-                                  width: 80,
-                                  margin: const EdgeInsets.only(
-                                    right: 12.0,
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      CircleAvatar(
-                                        radius: 32.0,
-                                        backgroundColor: Colors.white,
-                                        child: Icon(
-                                          item["icon"],
-                                          color: const Color(0xff0a4964),
-                                          size: 32.0,
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 4.0,
-                                      ),
-                                      Text(
-                                        item["label"],
-                                        overflow: TextOverflow.ellipsis,
-                                        style: const TextStyle(
-                                          fontSize: 12.0,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                                    .animate()
-                                    .scale(
-                                      delay: ((index * 200) + 100).ms,
-                                    )
-                                    .fadeIn();
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 400),
-              transform: Matrix4.translationValues(
-                  0.0, controller.isSlideUp ? -320.0 : -60, 0),
-              child: GestureDetector(
-                onVerticalDragUpdate: (e) {
-                  print(e.localPosition.dy);
-                  if (e.localPosition.dy <= -20) {
-                    controller.updateSlide(true);
-                  } else {
-                    controller.updateSlide(false);
-                  }
-                },
+                ),
                 child: Column(
                   children: [
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    AnimatedContainer(
-                      duration: const Duration(milliseconds: 800),
-                      height: 6.0,
-                      width: controller.isSlideUp ? 0.0 : 40.0,
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.4),
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(
-                            8.0,
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12.0,
+                        vertical: 8.0,
+                      ),
+                      decoration: const BoxDecoration(
+                        color: Color(0xff1e1e1e),
+                      ),
+                      child: Row(
+                        children: [
+                          const Expanded(
+                            child: Text(
+                              "Nathan Joe",
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                color: Colors.white,
+                              ),
+                            ),
                           ),
-                        ),
+                          Text(
+                            100000.0.currency,
+                            style: const TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                    const Text(
+                      "Available Balance",
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(
-                      height: 12.0,
+                      height: 6.0,
                     ),
-                    SizedBox(
-                      height: 1000.0,
-                      child: Container(
-                        padding: const EdgeInsets.only(
-                          left: 20.0,
-                          right: 20.0,
-                          top: 30.0,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(32.0),
-                            topRight: Radius.circular(32.0),
-                          ),
-                        ),
+                    Text(
+                      13259000.0.currency,
+                      style: const TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 6.0,
+                    ),
+                    const Text(
+                      "2000 4123 5252 41241",
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 12.0,
+              ),
+              H5(title: "Send money"),
+              const SizedBox(
+                height: 8.0,
+              ),
+              Builder(builder: (context) {
+                var items = [
+                  {
+                    "photo":
+                        "https://images.unsplash.com/photo-1656792213776-a900d686f2de?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1BTiUyMEZBQ0V8ZW58MHx8MHx8fDA%3D",
+                    "name": "Nathhan Joe",
+                  },
+                  {
+                    "photo":
+                        "https://plus.unsplash.com/premium_photo-1667511316159-faf667237427?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fE1BTiUyMEZBQ0V8ZW58MHx8MHx8fDA%3D",
+                    "name": "Jay Idzes",
+                  },
+                  {
+                    "photo":
+                        "https://images.unsplash.com/photo-1700856417754-cb66c909f4d7?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fE1BTiUyMEZBQ0V8ZW58MHx8MHx8fDA%3D",
+                    "name": "Tom Haye",
+                  },
+                  {
+                    "photo":
+                        "https://plus.unsplash.com/premium_photo-1664453547428-394c67fd8919?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fE1BTiUyMEZBQ0V8ZW58MHx8MHx8fDA%3D",
+                    "name": "Ragnar Oratmangoen",
+                  },
+                  {
+                    "photo":
+                        "https://images.unsplash.com/photo-1624395213081-608f51284ddd?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fE1BTiUyMEZBQ0V8ZW58MHx8MHx8fDA%3D",
+                    "name": "Elkan Baggot",
+                  },
+                  {
+                    "photo":
+                        "https://images.unsplash.com/photo-1635953869014-072895df9786?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fE1BTiUyMEZBQ0V8ZW58MHx8MHx8fDA%3D",
+                    "name": "Asnawi",
+                  },
+                  {
+                    "photo":
+                        "https://plus.unsplash.com/premium_photo-1664036154109-31e0624d29c7?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fE1BTiUyMEZBQ0V8ZW58MHx8MHx8fDA%3D",
+                    "name": "Arhan Pratama",
+                  },
+                ];
+                return SingleChildScrollView(
+                  controller: ScrollController(),
+                  clipBehavior: Clip.none,
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(items.length, (index) {
+                      var item = items[index];
+                      return SizedBox(
+                        width: 84.0,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: const Text(
-                                "Nearby places",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            CircleAvatar(
+                              radius: 28.0,
+                              backgroundImage: NetworkImage(
+                                item["photo"].toString(),
                               ),
-                            ).animate().fadeIn(),
-                            const SizedBox(
-                              height: 20.0,
                             ),
-                            Expanded(
-                              child: ListView.builder(
-                                itemCount: controller.places.length,
-                                physics: const ScrollPhysics(),
-                                padding: const EdgeInsets.all(0.0),
-                                itemBuilder: (BuildContext context, int index) {
-                                  var item = controller.places[index];
-                                  return Card(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(12.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            width: 90,
-                                            height: 90,
-                                            margin:
-                                                const EdgeInsets.only(right: 10.0),
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                  item["photo"],
-                                                ),
-                                                fit: BoxFit.cover,
-                                              ),
-                                              borderRadius: const BorderRadius.all(
-                                                Radius.circular(16.0),
-                                              ),
-                                              color: Colors.blue[400],
-                                            ),
-                                            child: Stack(
-                                              children: [
-                                                Container(
-                                                  padding: const EdgeInsets.all(6.0),
-                                                  margin: const EdgeInsets.all(8.0),
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.green[800],
-                                                    borderRadius:
-                                                        const BorderRadius.all(
-                                                      Radius.circular(
-                                                        12.0,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  child: const Text(
-                                                    "PROMO",
-                                                    style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 8.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  item["name"],
-                                                  style: const TextStyle(
-                                                    fontSize: 14.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 6.0,
-                                                ),
-                                                Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      "${item["distance"]} km",
-                                                      style: const TextStyle(
-                                                        fontSize: 10.0,
-                                                      ),
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 4.0,
-                                                    ),
-                                                    const Icon(
-                                                      Icons.circle,
-                                                      size: 4.0,
-                                                    ),
-                                                    const SizedBox(
-                                                      width: 4.0,
-                                                    ),
-                                                    Icon(
-                                                      Icons.star,
-                                                      color: Colors.orange[400],
-                                                      size: 16.0,
-                                                    ),
-                                                    Text(
-                                                      "${item["rating"]}",
-                                                      style: const TextStyle(
-                                                        fontSize: 10.0,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                const SizedBox(
-                                                  height: 6.0,
-                                                ),
-                                                Text(
-                                                  item["location"],
-                                                  style: const TextStyle(
-                                                    fontSize: 10.0,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 6.0,
-                                                ),
-                                                Text(
-                                                  "€${item["price"]}",
-                                                  style: const TextStyle(
-                                                    fontSize: 14.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                      .animate()
-                                      .moveX(
-                                        delay: ((index * 200) + 100).ms,
-                                        begin: index % 2 == 0 ? -300 : 300,
-                                      )
-                                      .scale()
-                                      .fadeIn();
-                                },
+                            Text(
+                              "${item["name"]}",
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 14.0,
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ),
-                  ],
-                ),
+                      );
+                    }),
+                  ),
+                );
+              }),
+              const SizedBox(
+                height: 20.0,
               ),
-            ).animate().move().scale(),
-          ],
+              Row(
+                children: [
+                  Expanded(
+                    child: H5(
+                      title: "Transaction History",
+                    ),
+                  ),
+                  const Icon(
+                    Icons.search,
+                    size: 20.0,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8.0,
+              ),
+              Builder(builder: (context) {
+                List items = [
+                  {
+                    "label": "Bank Transfer",
+                    "photo":
+                        "https://cdn-icons-png.flaticon.com/128/2830/2830289.png",
+                    "amount": -15000,
+                    "note": "Google Play Account",
+                  },
+                  {
+                    "label": "Bank Transfer",
+                    "photo":
+                        "https://cdn-icons-png.flaticon.com/128/2830/2830289.png",
+                    "amount": -8000,
+                    "note": "Firebase Console",
+                  },
+                  {
+                    "label": "Topup",
+                    "photo":
+                        "https://cdn-icons-png.flaticon.com/128/15526/15526118.png",
+                    "amount": 12000,
+                    "note": "#TP10001",
+                  },
+                  {
+                    "label": "Topup",
+                    "photo":
+                        "https://cdn-icons-png.flaticon.com/128/15526/15526118.png",
+                    "amount": 17000,
+                    "note": "#TP10001",
+                  },
+                  {
+                    "label": "Send Money",
+                    "photo":
+                        "https://cdn-icons-png.flaticon.com/128/9405/9405698.png",
+                    "amount": 17000,
+                    "note": "John Alex",
+                  }
+                ];
+                return ListView.builder(
+                  itemCount: items.length,
+                  shrinkWrap: true,
+                  physics: const ScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    var item = items[index];
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Colors.grey[200],
+                            backgroundImage: NetworkImage(
+                              item["photo"].toString(),
+                            ),
+                          ),
+                          title: Text(item["label"]),
+                          subtitle: Text(item["note"]),
+                          trailing: Text(
+                            (item["amount"] * 1.0 as double).number,
+                            style: const TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.grey[300],
+                        ),
+                      ],
+                    );
+                  },
+                );
+              }),
+            ],
+          ),
         ),
       ),
     );
