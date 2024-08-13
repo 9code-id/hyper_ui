@@ -1,3 +1,6 @@
+Demo Url: https://hui-demo.vercel.app/
+Linkedin: https://www.linkedin.com/in/deny-ocr-35541714b/
+
 # Versi Flutter yang saya gunakan
 ```
 Flutter 3.22.1 • channel stable • https://github.com/flutter/flutter.git
