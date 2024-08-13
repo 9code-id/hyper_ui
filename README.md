@@ -1,5 +1,11 @@
-Demo Url: https://hui-demo.vercel.app/
-Linkedin: https://www.linkedin.com/in/deny-ocr-35541714b/
+Demo Url:<br/>
+https://hui-demo.vercel.app/
+
+Linkedin:<br/>
+https://www.linkedin.com/in/deny-ocr-35541714b/
+
+Email:<br/>
+denyocr.world@gmail.com
 
 # Versi Flutter yang saya gunakan
 ```
