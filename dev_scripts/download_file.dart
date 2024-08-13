@@ -67,7 +67,7 @@ void findUrls(Directory directory) async {
 Future<void> downloadFileWithCurl(String url, String savePath) async {
   // Jalankan perintah curl melalui shell
   try {
-    final process = await Process.runSync('download_file.bat', [savePath, url]);
+    final process = Process.runSync('download_file.bat', [savePath, url]);
   } on Exception catch (err) {
     print(err);
   }
