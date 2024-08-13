@@ -2,6 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 
+enum QCategoryPickerStyle {
+  defaultStyle,
+  boldStyle,
+}
+
 class QCategoryPicker extends StatefulWidget {
   const QCategoryPicker({
     required this.items,
@@ -13,6 +18,7 @@ class QCategoryPicker extends StatefulWidget {
     this.label,
     this.hint,
     this.helper,
+    this.style = QCategoryPickerStyle.defaultStyle,
   });
   final List<Map<String, dynamic>> items;
   final String? label;
@@ -20,6 +26,7 @@ class QCategoryPicker extends StatefulWidget {
   final String? Function(int? value)? validator;
   final String? hint;
   final String? helper;
+  final QCategoryPickerStyle style;
 
   final Function(
     Map<String, dynamic> item,
@@ -103,16 +110,19 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
               errorBorder: InputBorder.none,
               helperText: widget.helper,
               hintText: widget.hint,
+              contentPadding: const EdgeInsets.all(0.0),
             ),
             child: SizedBox(
               width: MediaQuery.of(context).size.width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 6,
-                  ),
+                  if (widget.label != null && widget.label!.isNotEmpty)
+                    const SizedBox(
+                      height: 6,
+                    ),
                   SingleChildScrollView(
+                    padding: const EdgeInsets.all(0.0),
                     controller: ScrollController(),
                     scrollDirection: Axis.horizontal,
                     clipBehavior: Clip.none,
@@ -129,55 +139,111 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                         }
 
                         final count = item['count'] ?? 0;
-
-                        return Container(
-                          height: 32,
-                          margin: const EdgeInsets.only(
-                            right: 8,
-                          ),
-                          child: InkWell(
-                            onTap: () => updateIndex(index),
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 8,
-                                vertical: 8,
-                              ),
-                              decoration: BoxDecoration(
-                                color: selected ? primaryColor : disabledColor,
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(12),
-                                ),
-                              ),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    item['label'],
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color:
-                                          selected ? Colors.white : textColor,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 4,
-                                  ),
-                                  if (count > 0)
-                                    CircleAvatar(
-                                      radius: 6,
-                                      backgroundColor: Colors.red,
-                                      child: Text(
-                                        '$count',
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 8,
-                                        ),
+                        if (widget.style == QCategoryPickerStyle.boldStyle) {
+                          return Container(
+                            height: 32,
+                            margin: const EdgeInsets.only(
+                              right: 8,
+                            ),
+                            child: InkWell(
+                              onTap: () => updateIndex(index),
+                              child: Container(
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    if (selected) ...[
+                                      CircleAvatar(
+                                        radius: 4.0,
+                                        backgroundColor: textColor,
+                                      ),
+                                      const SizedBox(
+                                        width: 6.0,
+                                      ),
+                                    ],
+                                    Text(
+                                      item['label'],
+                                      style: TextStyle(
+                                        fontSize: selected ? 16 : 12,
+                                        color: selected
+                                            ? textColor
+                                            : textColor.withOpacity(0.6),
+                                        fontWeight: selected
+                                            ? FontWeight.bold
+                                            : FontWeight.normal,
                                       ),
                                     ),
-                                ],
+                                    const SizedBox(
+                                      width: 4,
+                                    ),
+                                    if (count > 0)
+                                      CircleAvatar(
+                                        radius: 6,
+                                        backgroundColor: Colors.red,
+                                        child: Text(
+                                          '$count',
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 8,
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        );
+                          );
+                        } else {
+                          return Container(
+                            height: 32,
+                            margin: const EdgeInsets.only(
+                              right: 8,
+                            ),
+                            child: InkWell(
+                              onTap: () => updateIndex(index),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                      selected ? primaryColor : disabledColor,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(12),
+                                  ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      item['label'],
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color:
+                                            selected ? Colors.white : textColor,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 4,
+                                    ),
+                                    if (count > 0)
+                                      CircleAvatar(
+                                        radius: 6,
+                                        backgroundColor: Colors.red,
+                                        child: Text(
+                                          '$count',
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 8,
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        }
                       }),
                     ),
                   ),
