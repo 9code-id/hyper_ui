@@ -121,8 +121,8 @@ color: textColor,
   Widget build(BuildContext context) {
     /*
     //#TEMPLATE func
-    void CURSOR_1() {
-      CURSOR_2
+    void xcursor1() {
+      xcursor2
     }
     //#END
 
@@ -139,15 +139,15 @@ color: textColor,
     //#END
 
     //#TEMPLATE afunc
-    Future CURSOR_1() async {
-      CURSOR_2
+    Future xcursor1() async {
+      xcursor2
     }
     //#END
 
     //#TEMPLATE for
     for(var i=0; i< items.length ;i++){
       var item = items[i];
-      CURSOR_1
+      xcursor1
     }
     //#END
     */
@@ -172,7 +172,7 @@ color: textColor,
             children: [
               const Text("Your Text"),
               const Text("Your Text"),
-              CURSOR_1
+              xcursor1
             ],
           ),
           //#END
@@ -181,7 +181,7 @@ color: textColor,
             children: [
               const Text("Your Text"),
               const Text("Your Text"),
-              CURSOR_1
+              xcursor1
             ],
           ),
           //#END
@@ -190,7 +190,7 @@ color: textColor,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
-                children: [CURSOR_1],
+                children: [xcursor1],
               ),
             ),
           ),
@@ -200,7 +200,7 @@ color: textColor,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
-                children: [CURSOR_1],
+                children: [xcursor1],
               ),
             ),
           ),
@@ -213,7 +213,7 @@ color: textColor,
                 children: [
                   const Text("Your Text"),
                   const Text("Your Text"),
-                  CURSOR_1,
+                  xcursor1,
                 ],
               ),
             ),

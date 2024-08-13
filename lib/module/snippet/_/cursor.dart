@@ -1,1 +1,1 @@
-dynamic CURSOR_1;
+dynamic xcursor1;

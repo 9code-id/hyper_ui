@@ -5,14 +5,14 @@
 
 import 'package:flutter/material.dart';
 
-class CURSOR_1 extends StatefulWidget {
-  const CURSOR_1({Key? key}) : super(key: key);
+class xcursor1 extends StatefulWidget {
+  const xcursor1({Key? key}) : super(key: key);
 
   @override
-  State<CURSOR_1> createState() => _CURSOR_1State();
+  State<xcursor1> createState() => _xcursor1State();
 }
 
-class _CURSOR_1State extends State<CURSOR_1> {
+class _xcursor1State extends State<xcursor1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class _CURSOR_1State extends State<CURSOR_1> {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: [CURSOR_2],
+            children: [xcursor2],
           ),
         ),
       ),

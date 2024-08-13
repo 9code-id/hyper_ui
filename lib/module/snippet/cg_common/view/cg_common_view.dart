@@ -213,7 +213,7 @@ item[""]
 """),
 /*
 #TEMPLATE item
-item["CURSOR_2"]
+item["xcursor2"]
 #END
 */
               SnippetContainer("cl"),
@@ -949,7 +949,8 @@ getWidget() {
         child: LayoutBuilder(builder: (context, constraints) {
           List<Map> items = <Map>[
             {
-              "photo": "https://res.cloudinary.com/dotz74j1p/raw/upload/v1716044999/t3jxwmbgwelsvgsmby4c.png",
+              "photo":
+                  "https://res.cloudinary.com/dotz74j1p/raw/upload/v1716044999/t3jxwmbgwelsvgsmby4c.png",
               "label": "John Doe",
               "info": "Programmer"
             },

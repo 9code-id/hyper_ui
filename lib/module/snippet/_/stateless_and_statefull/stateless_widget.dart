@@ -5,8 +5,8 @@
 
 import 'package:flutter/material.dart';
 
-class CURSOR_1 extends StatelessWidget {
-  const CURSOR_1({Key? key}) : super(key: key);
+class xcursor1 extends StatelessWidget {
+  const xcursor1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CURSOR_1 extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: [CURSOR_2],
+            children: [xcursor2],
           ),
         ),
       ),
@@ -28,5 +28,5 @@ class CURSOR_1 extends StatelessWidget {
 }
 //#END
 
-var CURSOR_2;
+var xcursor2;
 */

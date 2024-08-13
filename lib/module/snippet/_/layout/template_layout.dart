@@ -5,7 +5,7 @@ class TemplateLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var CURSOR_1 = Container();
+    var xcursor1 = Container();
     //#GROUP_TEMPLATE layout
 
     return Scaffold(
@@ -21,7 +21,7 @@ class TemplateLayout extends StatelessWidget {
             children: [
               //#TEMPLATE row
               Row(
-                children: [CURSOR_1],
+                children: [xcursor1],
               ),
               //#END
               const SizedBox(
@@ -153,7 +153,7 @@ class TemplateLayout extends StatelessWidget {
               ),
               //#TEMPLATE col
               Column(
-                children: [CURSOR_1],
+                children: [xcursor1],
               ),
               //#END
               //#TEMPLATE col2

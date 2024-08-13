@@ -291,17 +291,17 @@ clipBehavior: Clip.none,
               /*
               Container(
                 //#TEMPLATE decoration
-                decoration: BoxDecoration(CURSOR_1),
+                decoration: BoxDecoration(xcursor1),
                 //#END
 
                 //#TEMPLATE dc
-                decoration: BoxDecoration(CURSOR_1),
+                decoration: BoxDecoration(xcursor1),
                 //#END
 
                 //#TEMPLATE ccol
                 child: Column(
                   children: [
-                    CURSOR_1
+                    xcursor1
                   ],
                 ),
                 //#END
@@ -310,7 +310,7 @@ clipBehavior: Clip.none,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CURSOR_1
+                    xcursor1
                   ],
                 ),
                 //#END
@@ -318,7 +318,7 @@ clipBehavior: Clip.none,
                 //#TEMPLATE crow
                 child: Row(
                   children: [
-                    CURSOR_1
+                    xcursor1
                   ],
                 ),
                 //#END
@@ -326,7 +326,7 @@ clipBehavior: Clip.none,
                 //#TEMPLATE cwrap
                 child: Wrap(
                   children: [
-                    CURSOR_1
+                    xcursor1
                   ],
                 ),
                 //#END
@@ -334,7 +334,7 @@ clipBehavior: Clip.none,
                 //#TEMPLATE cstack
                 child: Stack(
                   children: [
-                    CURSOR_1
+                    xcursor1
                   ],
                 ),
                 //#END

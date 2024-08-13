@@ -153,7 +153,7 @@ class CgListView extends StatefulWidget {
               /*
               //#TEMPLATE rowg
               Row(
-                children: List.generate(10, (index) {CURSOR_2}),
+                children: List.generate(10, (index) {xcursor2}),
               ),
               //#END
               */
@@ -167,7 +167,7 @@ Row(
               /*
               //#TEMPLATE colg
               Column(
-                children: List.generate(10, (index) {CURSOR_2}),
+                children: List.generate(10, (index) {xcursor2}),
               ),
               //#END
               */
@@ -181,7 +181,7 @@ Column(
               /*
               //#TEMPLATE wrapg
               Wrap(
-                children: List.generate(10, (index) {CURSOR_2}),
+                children: List.generate(10, (index) {xcursor2}),
               ),
               //#END
               */
