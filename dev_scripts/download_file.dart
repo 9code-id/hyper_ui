@@ -21,7 +21,20 @@ void findUrls(Directory directory) async {
       List<String> lines = sourceFile.readAsLinesSync();
 
       for (final line in lines) {
-        if (line.contains('i.ibb')) {
+        List includes = [
+          "i.ibb",
+          "flaticon.com",
+        ];
+
+        bool isInclude = false;
+        for (var include in includes) {
+          if (line.contains(include)) {
+            isInclude = true;
+            break;
+          }
+        }
+
+        if (isInclude) {
           final urls = RegExp(r'https?://[^\s]+').allMatches(line);
           for (final match in urls) {
             // Menghapus spasi dan tanda baca dari URL sebelum mencetak
@@ -34,6 +47,7 @@ void findUrls(Directory directory) async {
             await downloadFileWithCurl(url, "contoh.png");
             var f = File("contoh.png");
             f.createSync(recursive: true);
+
             final formData = FormData.fromMap({
               'file': MultipartFile.fromBytes(
                 f.readAsBytesSync(),
@@ -67,7 +81,7 @@ void findUrls(Directory directory) async {
 Future<void> downloadFileWithCurl(String url, String savePath) async {
   // Jalankan perintah curl melalui shell
   try {
-    final process = Process.runSync('download_file.bat', [savePath, url]);
+    final process = Process.runSync('./dev/download_file.bat', [savePath, url]);
   } on Exception catch (err) {
     print(err);
   }
