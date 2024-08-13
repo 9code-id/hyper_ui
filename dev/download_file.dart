@@ -1,10 +1,16 @@
+/*
+Script untuk download semua gambar imgbb, flaticon,
+Lalu mengupload-nya ke cloudinary dan mengganti url imgbb, flaticon yang ada di
+file dart menjadi url cloudinary.
+
+Perintah:
+dart .\dev\download_file.dart
+*/
+
 // ignore_for_file: avoid_print
 
-import 'dart:convert';
 import 'dart:io';
-
 import 'package:dio/dio.dart';
-import 'package:dio_http2_adapter/dio_http2_adapter.dart';
 
 const String _CLOUDINARY_CLOUD_NAME = 'dotz74j1p';
 const String _CLOUDINARY_API_KEY = '983354314759691';
@@ -71,10 +77,9 @@ void findUrls(Directory directory) async {
             print(res.data['secure_url']);
 
             var cloudinaryUrl = res.data['secure_url'];
-
-            // var content = sourceFile.readAsStringSync();
-            // content = content.replaceAll(url, cloudinaryUrl);
-            // sourceFile.writeAsStringSync(content);
+            var content = sourceFile.readAsStringSync();
+            content = content.replaceAll(url, cloudinaryUrl);
+            sourceFile.writeAsStringSync(content);
           }
         }
       }
