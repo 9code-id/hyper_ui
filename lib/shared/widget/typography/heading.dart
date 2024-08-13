@@ -6,6 +6,7 @@ class HeadingWidget extends StatelessWidget {
     required this.title,
     required this.titleFontSize,
     required this.subtitleFontSize,
+    required this.actions,
     super.key,
     this.subtitle,
     this.onPressed,
@@ -17,6 +18,7 @@ class HeadingWidget extends StatelessWidget {
   final double subtitleFontSize;
   final Function? onPressed;
   final bool alternativeStyles;
+  final List<Widget> actions;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +60,7 @@ class HeadingWidget extends StatelessWidget {
                 ),
               ),
             ),
+          ...actions
         ],
       ),
     );
@@ -68,6 +71,7 @@ Widget H1({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -75,6 +79,7 @@ Widget H1({
     titleFontSize: 32,
     subtitleFontSize: 16,
     onPressed: onPressed,
+    actions: actions,
   );
 }
 
@@ -82,6 +87,7 @@ Widget H2({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -89,6 +95,7 @@ Widget H2({
     titleFontSize: 28,
     subtitleFontSize: 16,
     onPressed: onPressed,
+    actions: actions,
   );
 }
 
@@ -96,6 +103,7 @@ Widget H3({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -103,6 +111,7 @@ Widget H3({
     titleFontSize: 24,
     subtitleFontSize: 16,
     onPressed: onPressed,
+    actions: actions,
   );
 }
 
@@ -110,6 +119,7 @@ Widget H4({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -117,6 +127,7 @@ Widget H4({
     titleFontSize: 20,
     subtitleFontSize: 16,
     onPressed: onPressed,
+    actions: actions,
   );
 }
 
@@ -124,6 +135,7 @@ Widget H5({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -131,6 +143,7 @@ Widget H5({
     titleFontSize: 18,
     subtitleFontSize: 16,
     onPressed: onPressed,
+    actions: actions,
   );
 }
 
@@ -138,6 +151,7 @@ Widget H6({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -145,6 +159,7 @@ Widget H6({
     titleFontSize: 16,
     subtitleFontSize: 16,
     onPressed: onPressed,
+    actions: actions,
   );
 }
 
@@ -152,6 +167,7 @@ Widget HS1({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -160,6 +176,7 @@ Widget HS1({
     subtitleFontSize: 14,
     onPressed: onPressed,
     alternativeStyles: true,
+    actions: actions,
   );
 }
 
@@ -167,6 +184,7 @@ Widget HS2({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -175,6 +193,7 @@ Widget HS2({
     subtitleFontSize: 14,
     onPressed: onPressed,
     alternativeStyles: true,
+    actions: actions,
   );
 }
 
@@ -182,6 +201,7 @@ Widget HS3({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -190,6 +210,7 @@ Widget HS3({
     subtitleFontSize: 14,
     onPressed: onPressed,
     alternativeStyles: true,
+    actions: actions,
   );
 }
 
@@ -197,6 +218,7 @@ Widget HS4({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -205,6 +227,7 @@ Widget HS4({
     subtitleFontSize: 14,
     onPressed: onPressed,
     alternativeStyles: true,
+    actions: actions,
   );
 }
 
@@ -212,6 +235,7 @@ Widget HS5({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -220,6 +244,7 @@ Widget HS5({
     subtitleFontSize: 14,
     onPressed: onPressed,
     alternativeStyles: true,
+    actions: actions,
   );
 }
 
@@ -227,6 +252,7 @@ Widget HS6({
   required String title,
   String? subtitle,
   Function? onPressed,
+  List<Widget> actions = const [],
 }) {
   return HeadingWidget(
     title: title,
@@ -235,5 +261,151 @@ Widget HS6({
     subtitleFontSize: 14,
     onPressed: onPressed,
     alternativeStyles: true,
+    actions: actions,
+  );
+}
+
+Column get templates {
+  return Column(
+    children: [
+      //#TEMPLATE h1
+      H1(
+        title: "Category",
+      ),
+      //#END
+      //#TEMPLATE h1_label
+      H1(
+        title: "Category",
+        subtitle: "See all",
+      ),
+      //#END
+      //#TEMPLATE h1_icon
+      H1(
+        title: "Category",
+        actions: [
+          const Icon(
+            Icons.search,
+            size: 20.0,
+          ),
+        ],
+      ),
+      //#END
+
+      //Buatkan untuk h2, h3, h4, h5, h6
+      //#TEMPLATE h2
+      H2(
+        title: "Category",
+      ),
+      //#END
+      //#TEMPLATE h2_label
+      H2(
+        title: "Category",
+        subtitle: "See all",
+      ),
+      //#END
+      //#TEMPLATE h2_icon
+      H2(
+        title: "Category",
+        actions: [
+          const Icon(
+            Icons.search,
+            size: 20.0,
+          ),
+        ],
+      ),
+      //#END
+
+      //#TEMPLATE h3
+      H3(
+        title: "Category",
+      ),
+      //#END
+      //#TEMPLATE h3_label
+      H3(
+        title: "Category",
+        subtitle: "See all",
+      ),
+      //#END
+      //#TEMPLATE h3_icon
+      H3(
+        title: "Category",
+        actions: [
+          const Icon(
+            Icons.search,
+            size: 20.0,
+          ),
+        ],
+      ),
+      //#END
+
+      //#TEMPLATE h4
+      H4(
+        title: "Category",
+      ),
+      //#END
+      //#TEMPLATE h4_label
+      H4(
+        title: "Category",
+        subtitle: "See all",
+      ),
+      //#END
+      //#TEMPLATE h4_icon
+      H4(
+        title: "Category",
+        actions: [
+          const Icon(
+            Icons.search,
+            size: 20.0,
+          ),
+        ],
+      ),
+      //#END
+
+      //#TEMPLATE h5
+      H5(
+        title: "Category",
+      ),
+      //#END
+      //#TEMPLATE h5_label
+      H5(
+        title: "Category",
+        subtitle: "See all",
+      ),
+      //#END
+      //#TEMPLATE h5_icon
+      H5(
+        title: "Category",
+        actions: [
+          const Icon(
+            Icons.search,
+            size: 20.0,
+          ),
+        ],
+      ),
+      //#END
+
+      //#TEMPLATE h6
+      H6(
+        title: "Category",
+      ),
+      //#END
+      //#TEMPLATE h6_label
+      H6(
+        title: "Category",
+        subtitle: "See all",
+      ),
+      //#END
+      //#TEMPLATE h6_icon
+      H6(
+        title: "Category",
+        actions: [
+          const Icon(
+            Icons.search,
+            size: 20.0,
+          ),
+        ],
+      ),
+      //#END
+    ],
   );
 }

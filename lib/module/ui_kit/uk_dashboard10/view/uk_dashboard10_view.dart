@@ -199,13 +199,9 @@ class UkDashboard10View extends StatefulWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: H5(
-                      title: "Transaction History",
-                    ),
-                  ),
+              H5(
+                title: "Transaction History",
+                actions: [
                   const Icon(
                     Icons.search,
                     size: 20.0,
