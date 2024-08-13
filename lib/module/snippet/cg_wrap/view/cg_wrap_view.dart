@@ -6,7 +6,8 @@ class CgWrapView extends StatefulWidget {
 
   Widget build(context, CgWrapController controller) {
     controller.view = this;
-    var cursor2 = Container();
+    var xcursor2 = Container();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("CgWrap"),
@@ -27,7 +28,7 @@ Wrap(
                   .trim()),
               //#TEMPLATE wrap
               Wrap(
-                children: [cursor2],
+                children: [xcursor2],
               ),
               //#END
 
