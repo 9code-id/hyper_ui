@@ -259,6 +259,7 @@ class UkDashboard15View extends StatefulWidget {
                     "value": "Most viewed",
                   }
                 ],
+                value: "Most popular",
                 style: QCategoryPickerStyle.boldStyle,
                 validator: Validator.required,
                 onChanged: (index, label, value, item) {},

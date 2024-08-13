@@ -143,7 +143,8 @@ class UkFormView extends StatefulWidget {
                           },
                         ),
                         //#END
-                        const SnippetContainer("q_moneyfield_decimal_with_currency"),
+                        const SnippetContainer(
+                            "q_moneyfield_decimal_with_currency"),
                         //#TEMPLATE q_moneyfield_decimal_with_currency
                         QNumberField(
                           label: "Price 5",
@@ -344,7 +345,35 @@ class UkFormView extends StatefulWidget {
                               "value": "Dessert",
                             }
                           ],
+                          value: "Main Course",
                           validator: Validator.required,
+                          onChanged: (index, label, value, item) {},
+                        ),
+                        //#END
+                        //#TEMPLATE q_category_picker_bold_style
+                        QCategoryPicker(
+                          label: "Category",
+                          items: const [
+                            {
+                              "label": "Main Course",
+                              "value": "Main Course",
+                            },
+                            {
+                              "label": "Drink",
+                              "value": "Drink",
+                            },
+                            {
+                              "label": "Snack",
+                              "value": "Snack",
+                            },
+                            {
+                              "label": "Dessert",
+                              "value": "Dessert",
+                            }
+                          ],
+                          value: "Main Course",
+                          validator: Validator.required,
+                          style: QCategoryPickerStyle.boldStyle,
                           onChanged: (index, label, value, item) {},
                         ),
                         //#END
