@@ -54,6 +54,11 @@ setupHUIConfig() {
     //   label: "Card",
     //   view: const WebCardView(),
     // ),
+    // MenuItem(
+    //   icon: Icons.art_track,
+    //   label: "Assets",
+    //   view: const WebAssetView(),
+    // ),
     MenuItem(
       label: "Views",
       separator: true,

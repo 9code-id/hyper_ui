@@ -32,6 +32,7 @@ void findUrls(Directory directory) async {
         List includes = [
           "i.ibb",
           "flaticon.com",
+          "pixabay.com",
         ];
 
         bool isInclude = false;

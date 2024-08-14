@@ -327,8 +327,6 @@ export 'package:hyper_ui/module/web/web_calendar/controller/web_calendar_control
 export 'package:hyper_ui/module/web/web_calendar/view/web_calendar_view.dart';
 export 'package:hyper_ui/module/web/web_calendar/widget/basic_calendar.dart';
 export 'package:hyper_ui/module/web/web_calendar/widget/event_calendar.dart';
-export 'package:hyper_ui/module/web/web_card/controller/web_card_controller.dart';
-export 'package:hyper_ui/module/web/web_card/view/web_card_view.dart';
 export 'package:hyper_ui/module/web/web_chart/controller/web_chart_controller.dart';
 export 'package:hyper_ui/module/web/web_chart/view/web_chart_view.dart';
 export 'package:hyper_ui/module/web/web_chart/widget/web_realtime_chart.dart';
