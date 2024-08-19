@@ -16,9 +16,11 @@ class QCarousel extends StatefulWidget {
     required this.images,
     super.key,
     this.type = CarouselType.type1,
+    this.height = 160,
   });
   final List images;
   final CarouselType type;
+  final double height;
   @override
   State<QCarousel> createState() => _QCarouselState();
 }
@@ -36,7 +38,7 @@ class _QCarouselState extends State<QCarousel> {
             builder: (context) {
               return cl.CarouselSlider(
                 options: cl.CarouselOptions(
-                  height: 160,
+                  height: widget.height,
                   autoPlay: true,
                   enlargeCenterPage: true,
                 ),
@@ -70,7 +72,7 @@ class _QCarouselState extends State<QCarousel> {
             builder: (context) {
               return cl.CarouselSlider(
                 options: cl.CarouselOptions(
-                  height: 160,
+                  height: widget.height,
                   autoPlay: true,
                   aspectRatio: 1,
                   enlargeFactor: 1,
@@ -108,7 +110,7 @@ class _QCarouselState extends State<QCarousel> {
               return cl.CarouselSlider(
                 options: cl.CarouselOptions(
                   scrollDirection: Axis.vertical,
-                  height: 160,
+                  height: widget.height,
                   autoPlay: true,
                   enlargeCenterPage: true,
                 ),
@@ -145,7 +147,7 @@ class _QCarouselState extends State<QCarousel> {
                   cl.CarouselSlider(
                     carouselController: carouselSliderController,
                     options: cl.CarouselOptions(
-                      height: 160,
+                      height: widget.height,
                       autoPlay: true,
                       enlargeCenterPage: true,
                       onPageChanged: (index, reason) {
@@ -217,7 +219,7 @@ class _QCarouselState extends State<QCarousel> {
                   cl.CarouselSlider(
                     carouselController: carouselSliderController,
                     options: cl.CarouselOptions(
-                      height: 160,
+                      height: widget.height,
                       autoPlay: true,
                       viewportFraction: 1,
                       onPageChanged: (index, reason) {

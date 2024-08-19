@@ -58,10 +58,10 @@ void printb(dynamic text) {
 
 // ~ SNACKBAR ~ //
 
-ss(dynamic message) {
-  snackbarSuccess(message: "$message");
+ss(dynamic message, [dynamic body]) {
+  snackbarSuccess(message: "$message", body: body);
 }
 
-se(dynamic message) {
-  snackbarDanger(message: "$message");
+se(dynamic message, [dynamic body]) {
+  snackbarDanger(message: "$message", body: body);
 }

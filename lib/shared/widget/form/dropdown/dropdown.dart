@@ -1,4 +1,10 @@
 //#TEMPLATE reuseable_dropdown_field
+/*
+TODO:
+default value masih belum benar
+Conntoh value +61213213123
+Harus dipisah ke variabel code dan value
+*/
 import 'package:flutter/material.dart';
 
 class QDropdownField extends StatefulWidget {
@@ -12,6 +18,7 @@ class QDropdownField extends StatefulWidget {
     this.emptyMode = true,
     this.hint,
     this.helper,
+    this.margin,
   });
   final String label;
   final String? hint;
@@ -21,6 +28,7 @@ class QDropdownField extends StatefulWidget {
   final dynamic value;
   final bool emptyMode;
   final Function(dynamic value, String? label) onChanged;
+  final EdgeInsetsGeometry? margin;
 
   @override
   State<QDropdownField> createState() => _QDropdownFieldState();
@@ -76,9 +84,10 @@ class _QDropdownFieldState extends State<QDropdownField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(
-        bottom: 12,
-      ),
+      margin: widget.margin ??
+          EdgeInsets.only(
+            bottom: 12,
+          ),
       child: FormField(
         initialValue: false,
         validator: (value) {
