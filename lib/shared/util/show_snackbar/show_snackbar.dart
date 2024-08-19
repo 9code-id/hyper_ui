@@ -10,14 +10,16 @@ showCustomSnackbar({
   int duration = 4,
   Color? color,
 }) {
+  var notchHeight = MediaQuery.of(Get.currentContext).padding.top;
   final snackBar = SnackBar(
     behavior: SnackBarBehavior.floating,
     duration: Duration(seconds: duration),
     padding: const EdgeInsets.all(0.0),
     backgroundColor: Colors.transparent,
     elevation: 0.0,
-    margin:  EdgeInsets.only(
-      bottom: MediaQuery.of(Get.currentContext).size.height - 70,
+    margin: EdgeInsets.only(
+      bottom:
+          MediaQuery.of(Get.currentContext).size.height - (notchHeight + 110),
       // bottom: 20,
       left: 20,
       right: 20,
