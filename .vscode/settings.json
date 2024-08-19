@@ -2,7 +2,7 @@
   "[dart]": {
       "editor.formatOnSave": true,
       "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit"
+          "source.fixAll": true
       },
       "editor.formatOnType": true,
       "editor.rulers": [
@@ -12,7 +12,7 @@
       "editor.suggest.snippetsPreventQuickSuggestions": false,
       "editor.suggestSelection": "first",
       "editor.tabCompletion": "onlySnippets",
-      "editor.wordBasedSuggestions": "off",
+      "editor.wordBasedSuggestions": false,
       "editor.defaultFormatter": "Dart-Code.dart-code"
   },
 }

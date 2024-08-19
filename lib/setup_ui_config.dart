@@ -44,11 +44,11 @@ setupHUIConfig() {
       label: "Tables",
       view: const WebTableView(),
     ),
-    // MenuItem(
-    //   icon: Icons.window_outlined,
-    //   label: "Dialog",
-    //   view: const WebDialogView(),
-    // ),
+    MenuItem(
+      icon: Icons.window_outlined,
+      label: "Dialog",
+      view: const WebDialogView(),
+    ),
     // MenuItem(
     //   icon: Icons.laptop_windows_outlined,
     //   label: "Card",

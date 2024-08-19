@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
@@ -13,13 +14,20 @@ showCustomSnackbar({
     behavior: SnackBarBehavior.floating,
     duration: Duration(seconds: duration),
     padding: const EdgeInsets.all(0.0),
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.transparent,
+    elevation: 0.0,
+    margin: EdgeInsets.only(
+      bottom: MediaQuery.of(Get.currentContext).size.height - 70,
+      left: 20,
+      right: 20,
+    ),
     content: Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 12.0,
         vertical: 8.0,
       ),
       decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: const BorderRadius.all(
           Radius.circular(8.0),
         ),
@@ -37,7 +45,7 @@ showCustomSnackbar({
             color: color ?? primaryColor,
           ),
           left: BorderSide(
-            width: 4.0,
+            width: 8.0,
             color: color ?? primaryColor,
           ),
         ),
@@ -56,6 +64,8 @@ showCustomSnackbar({
           if (body != null)
             Text(
               body,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
               style: TextStyle(
                 color: textColor,
                 fontSize: 12.0,
@@ -63,14 +73,7 @@ showCustomSnackbar({
             )
         ],
       ),
-    )
-        .animate()
-        .scale(
-          duration: 200.ms,
-        )
-        .shake(
-          duration: 100.ms,
-        ),
+    ),
   );
   ScaffoldMessenger.of(globalContext).hideCurrentSnackBar();
   ScaffoldMessenger.of(globalContext).showSnackBar(snackBar);
