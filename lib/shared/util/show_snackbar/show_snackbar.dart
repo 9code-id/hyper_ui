@@ -21,7 +21,34 @@ showCustomSnackbar({
       left: 20,
       right: 20,
     ),
-    content: Container(
+    content: QAlert(
+      color: color,
+      message: message,
+      body: body,
+      duration: duration,
+    ),
+  );
+  ScaffoldMessenger.of(globalContext).hideCurrentSnackBar();
+  ScaffoldMessenger.of(globalContext).showSnackBar(snackBar);
+}
+
+class QAlert extends StatelessWidget {
+  const QAlert({
+    super.key,
+    this.color,
+    required this.message,
+    this.body,
+    this.duration = 4,
+  });
+  final Color? color;
+  final String message;
+  final String? body;
+  final int duration;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.symmetric(
         horizontal: 12.0,
         vertical: 8.0,
@@ -63,7 +90,7 @@ showCustomSnackbar({
           ),
           if (body != null)
             Text(
-              body,
+              body!,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
               style: TextStyle(
@@ -73,10 +100,8 @@ showCustomSnackbar({
             )
         ],
       ),
-    ),
-  );
-  ScaffoldMessenger.of(globalContext).hideCurrentSnackBar();
-  ScaffoldMessenger.of(globalContext).showSnackBar(snackBar);
+    );
+  }
 }
 
 snackbarPrimary({required String message, String? body, int duration = 4}) {

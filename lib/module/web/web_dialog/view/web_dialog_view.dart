@@ -12,6 +12,7 @@ class WebDialogView extends StatefulWidget {
         actions: const [],
       ),
       body: QResponsiveView(
+        crossAxisCounts: const [1, 2],
         children: [
           Container(
             constraints: const BoxConstraints(
@@ -77,6 +78,71 @@ class WebDialogView extends StatefulWidget {
                     ssc("Secondary Dialog", "This is a secondary dialog");
                   },
                 ),
+              ],
+            ),
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: QCard(
+              title: "Alert",
+              children: [
+                //#TEMPLATE q_alert_success
+                QAlert(
+                  message: "This is an alert message",
+                  body: "You can define alert body here",
+                  color: successColor,
+                ),
+                //#END
+                const SizedBox(
+                  height: 12.0,
+                ),
+                //#TEMPLATE q_alert_danger
+                QAlert(
+                  message: "This is an alert message",
+                  body: "You can define alert body here",
+                  color: dangerColor,
+                ),
+                //#END
+                const SizedBox(
+                  height: 12.0,
+                ),
+                //#TEMPLATE q_alert_info
+                QAlert(
+                  message: "This is an alert message",
+                  body: "You can define alert body here",
+                  color: infoColor,
+                ),
+                //#END
+                const SizedBox(
+                  height: 12.0,
+                ),
+                //#TEMPLATE q_alert_warning
+                QAlert(
+                  message: "This is an alert message",
+                  body: "You can define alert body here",
+                  color: warningColor,
+                ),
+                //#END
+                const SizedBox(
+                  height: 12.0,
+                ),
+                //#TEMPLATE q_alert_primary
+                QAlert(
+                  message: "This is an alert message",
+                  body: "You can define alert body here",
+                  color: primaryColor,
+                ),
+                //#END
+                const SizedBox(
+                  height: 12.0,
+                ),
+                //#TEMPLATE q_alert_secondary
+                QAlert(
+                  message: "This is an alert message",
+                  body: "You can define alert body here",
+                  color: secondaryColor,
+                ),
+                //#END
               ],
             ),
           ),
