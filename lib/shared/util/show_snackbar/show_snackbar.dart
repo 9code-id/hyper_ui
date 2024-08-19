@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 
@@ -62,7 +63,14 @@ showCustomSnackbar({
             )
         ],
       ),
-    ),
+    )
+        .animate()
+        .scale(
+          duration: 200.ms,
+        )
+        .shake(
+          duration: 100.ms,
+        ),
   );
   ScaffoldMessenger.of(globalContext).hideCurrentSnackBar();
   ScaffoldMessenger.of(globalContext).showSnackBar(snackBar);
