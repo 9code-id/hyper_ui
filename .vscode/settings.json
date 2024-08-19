@@ -3,7 +3,7 @@
       "editor.formatOnSave": true,
       "editor.codeActionsOnSave": {
         "source.fixAll": "explicit"
-    },
+      },
       "editor.formatOnType": true,
       "editor.rulers": [
           80
