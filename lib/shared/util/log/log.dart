@@ -65,3 +65,63 @@ ss(dynamic message, [dynamic body]) {
 se(dynamic message, [dynamic body]) {
   snackbarDanger(message: "$message", body: body);
 }
+
+sw(dynamic message, [dynamic body]) {
+  snackbarWarning(message: "$message", body: body);
+}
+
+si(dynamic message, [dynamic body]) {
+  snackbarInfo(message: "$message", body: body);
+}
+
+sp(dynamic message, [dynamic body]) {
+  snackbarPrimary(message: "$message", body: body);
+}
+
+ssc(dynamic message, [dynamic body]) {
+  snackbarSecondary(message: "$message", body: body);
+}
+
+/*
+//#TEMPLATE se
+se(
+  "Login Failed",
+  "Please double check your email and password",
+);
+//#END
+
+//#TEMPLATE ss
+ss(
+  "Login Success",
+  "Welcome back, John Doe",
+);
+//#END
+
+//#TEMPLATE sw
+sw(
+  "Hot Batteries",
+  "Warning! Your battery is overheating",
+);
+//#END
+
+//#TEMPLATE si
+si(
+  "You have a new message",
+  "Please check your inbox",
+);
+//#END
+
+//#TEMPLATE sp
+sp(
+  "Your account is verified",
+  "Now you can access all features",
+);
+//#END
+
+//#TEMPLATE ssc
+ssc(
+  "Your account is verified",
+  "Now you can access all features",
+);
+//#END
+*/
