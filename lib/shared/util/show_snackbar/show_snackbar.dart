@@ -17,7 +17,8 @@ showCustomSnackbar({
     backgroundColor: Colors.transparent,
     elevation: 0.0,
     margin: EdgeInsets.only(
-      bottom: MediaQuery.of(Get.currentContext).size.height - 70,
+      // bottom: MediaQuery.of(Get.currentContext).size.height - 70,
+      bottom: 20,
       left: 20,
       right: 20,
     ),
