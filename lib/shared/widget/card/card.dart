@@ -126,3 +126,31 @@ class QCard extends StatelessWidget {
 }
 
 //#END
+
+/*
+//#TEMPLATE q_card
+Container(
+  width: MediaQuery.of(context).size.width,
+  child: QCard(
+    title: "Alert",
+    children: [
+      
+    ],
+  ),
+),
+//#END
+
+//#TEMPLATE q_card_460
+Container(
+  constraints: const BoxConstraints(
+    maxWidth: 460,
+  ),
+  child: QCard(
+    title: "Alert",
+    children: [
+      
+    ],
+  ),
+),
+//#END
+*/
