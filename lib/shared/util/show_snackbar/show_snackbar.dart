@@ -11,6 +11,14 @@ showCustomSnackbar({
   Color? color,
 }) {
   var notchHeight = MediaQuery.of(Get.currentContext).padding.top;
+  var maxWidth = MediaQuery.of(Get.currentContext).size.width;
+  var yourMaxWidth = 400;
+  double marginHorizontal = 20;
+
+  if (maxWidth > 760) {
+    marginHorizontal = (maxWidth - yourMaxWidth) / 2;
+  }
+
   final snackBar = SnackBar(
     behavior: SnackBarBehavior.floating,
     duration: Duration(seconds: duration),
@@ -21,8 +29,8 @@ showCustomSnackbar({
       bottom:
           MediaQuery.of(Get.currentContext).size.height - (notchHeight + 80),
       // bottom: 20,
-      left: 20,
-      right: 20,
+      left: marginHorizontal,
+      right: marginHorizontal,
     ),
     content: QAlert(
       color: color,
