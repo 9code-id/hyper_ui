@@ -19,7 +19,7 @@ showCustomSnackbar({
     elevation: 0.0,
     margin: EdgeInsets.only(
       bottom:
-          MediaQuery.of(Get.currentContext).size.height - (notchHeight + 110),
+          MediaQuery.of(Get.currentContext).size.height - (notchHeight + 80),
       // bottom: 20,
       left: 20,
       right: 20,
