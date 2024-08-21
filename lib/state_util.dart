@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_ui/shared/util/dialog/show_custom_dialog_widget.dart';
 
 BuildContext get globalContext {
   return Get.currentContext;
@@ -18,17 +17,6 @@ class Get {
       MaterialPageRoute(builder: (context) => page),
     );
   }
-
-  static tor(Widget page) async {
-    if (MediaQuery.of(globalContext).size.width > 850) {
-      await showCustomDialogWidget(
-        child: page,
-      );
-    } else {
-      await Get.to(page);
-    }
-  }
-
   static back() {
     if (Navigator.canPop(globalContext) == false) return;
     Navigator.pop(globalContext);
