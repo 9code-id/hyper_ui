@@ -17,6 +17,7 @@ class Get {
       MaterialPageRoute(builder: (context) => page),
     );
   }
+  
   static back() {
     if (Navigator.canPop(globalContext) == false) return;
     Navigator.pop(globalContext);
