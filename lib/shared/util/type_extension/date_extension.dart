@@ -55,6 +55,26 @@ extension DateTimeExtension on DateTime {
     return DateFormat('kk:mm:ss').format(toLocal().toLocal());
   }
 
+  
+  String get EEEEdMMMy {
+    return DateFormat('EEEE, d MMM y').format(toLocal().toLocal());
+  }
+
+  String get HHmm {
+    return DateFormat('HH:mm').format(toLocal().toLocal());
+  }
+
+  DateTime withHourAndMinute(int hour, int minute) {
+    return DateTime(now.year, now.month, now.day, hour, minute);
+  }
+
+  DateTime withHourAndMinuteFromTime(String time) {
+    //HH:mm
+    var hour = int.parse(time.split(":").first);
+    var minute = int.parse(time.split(":").last);
+    return now.withHourAndMinute(hour, minute);
+  }
+
   bool isToday() {
     return toLocal().year == now.year &&
         toLocal().month == now.month &&
