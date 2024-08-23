@@ -9,12 +9,14 @@ class ListItem3 extends StatelessWidget {
     this.value,
     this.onTap,
     this.color,
+    this.enableCopy = false,
   });
   final String label;
   final String? value;
   final Function? onTap;
   final Color? color;
   final bool separator;
+  final bool enableCopy;
 
   @override
   Widget build(BuildContext context) {
@@ -46,14 +48,38 @@ class ListItem3 extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Text(
-                    '$value',
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: color,
+                  child: InkWell(
+                    onTap: () {
+                      if (enableCopy) {
+                        Clipboard.setData(ClipboardData(text: value ?? ''));
+                      }
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            '$value',
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: color,
+                            ),
+                          ),
+                        ),
+                        if (enableCopy) ...[
+                          const SizedBox(
+                            width: 4.0,
+                          ),
+                          const Icon(
+                            Icons.copy,
+                            size: 16.0,
+                          ),
+                        ],
+                      ],
                     ),
                   ),
                 ),
