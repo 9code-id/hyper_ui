@@ -6,8 +6,8 @@ Widget FloatingAction({
 }) {
   return FloatingActionButton(
     heroTag: UniqueKey(),
-    onPressed: () {
-      if (tapProtected) return;
+    onPressed: () async {
+      if (await isTapProtected()) return;
       onPressed();
     },
     child: const Icon(Icons.add),

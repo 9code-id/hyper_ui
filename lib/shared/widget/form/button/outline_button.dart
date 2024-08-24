@@ -29,8 +29,8 @@ class QOutlineButton extends StatelessWidget {
             width: 2,
           ),
         ),
-        onPressed: () {
-          if (tapProtected) return;
+        onPressed: () async {
+          if (await isTapProtected()) return;
           onPressed();
         },
         child: Text(

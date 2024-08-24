@@ -38,8 +38,8 @@ class QOutlineIconButton extends StatelessWidget {
             color: Color(0xffd9dbd9),
           ),
         ),
-        onPressed: () {
-          if (tapProtected) return;
+        onPressed: () async {
+          if (await isTapProtected()) return;
           onPressed();
         },
       ),

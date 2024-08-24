@@ -26,9 +26,9 @@ showCustomSnackbar({
     backgroundColor: Colors.transparent,
     elevation: 0.0,
     margin: EdgeInsets.only(
-      bottom:
-          MediaQuery.of(Get.currentContext).size.height - (notchHeight + 160),
-      // bottom: 20,
+      // bottom:
+      //     MediaQuery.of(Get.currentContext).size.height - (notchHeight + 160),
+      bottom: 20,
       left: marginHorizontal,
       right: marginHorizontal,
     ),
@@ -97,7 +97,7 @@ class QAlert extends StatelessWidget {
             maxLines: 4,
             style: TextStyle(
               color: textColor,
-              fontSize: 12.0,
+              fontSize: 16.0,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -108,7 +108,7 @@ class QAlert extends StatelessWidget {
               maxLines: 4,
               style: TextStyle(
                 color: textColor,
-                fontSize: 12.0,
+                fontSize: 14.0,
               ),
             )
         ],

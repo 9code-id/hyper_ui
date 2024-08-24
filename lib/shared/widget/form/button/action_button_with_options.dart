@@ -51,8 +51,8 @@ class QActionButtonWithOptions extends StatelessWidget {
                 backgroundColor: const Color(0xffe8e8e8),
                 foregroundColor: const Color(0xff545d58),
               ),
-              onPressed: () {
-                if (tapProtected) return;
+              onPressed: () async {
+                if (await isTapProtected()) return;
                 onOptionPressed();
               },
               child: Icon(

@@ -59,8 +59,8 @@ class _QButtonState extends State<QButton> {
           backgroundColor:
               widget.enabled ? (widget.color ?? primaryColor) : disabledColor,
         ),
-        onPressed: () {
-          if (tapProtected) return;
+        onPressed: () async {
+          if (await isTapProtected()) return;
           widget.enabled ? widget.onPressed() : {};
         },
         child: Row(

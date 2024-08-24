@@ -9,6 +9,7 @@ enum CarouselType {
   type3,
   type4,
   type5,
+  type6,
 }
 
 class QCarousel extends StatefulWidget {
@@ -275,6 +276,88 @@ class _QCarouselState extends State<QCarousel> {
                         ),
                       );
                     }).toList(),
+                  ),
+                ],
+              );
+            },
+          ),
+        if (widget.type == CarouselType.type6)
+          Builder(
+            builder: (context) {
+              return Stack(
+                children: [
+                  cl.CarouselSlider(
+                    carouselController: carouselSliderController,
+                    options: cl.CarouselOptions(
+                      height: widget.height,
+                      autoPlay: true,
+                      viewportFraction: 1,
+                      onPageChanged: (index, reason) {
+                        currentIndex = index;
+                        setState(() {});
+                      },
+                    ),
+                    items: widget.images.map((imageUrl) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Container(
+                            width: MediaQuery.of(context).size.width,
+                            // margin: const EdgeInsets.symmetric(horizontal: 5),
+                            decoration: BoxDecoration(
+                              color: Colors.amber,
+                              // borderRadius: const BorderRadius.all(
+                              //   Radius.circular(6),
+                              // ),
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                  imageUrl,
+                                ),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    }).toList(),
+                  ),
+                  Positioned(
+                    left: 4,
+                    bottom: 4,
+                    child: Container(
+                      padding: const EdgeInsets.all(4.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(12.0),
+                        ),
+                        color: Colors.black.withOpacity(0.4),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: widget.images.asMap().entries.map((entry) {
+                          final isSelected = currentIndex == entry.key;
+                          return GestureDetector(
+                            onTap: () => carouselSliderController
+                                .animateToPage(entry.key),
+                            child: Container(
+                              width: isSelected ? 40 : 6.0,
+                              height: 6,
+                              margin: const EdgeInsets.only(
+                                right: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: isSelected
+                                    ? Colors.white
+                                    : Colors.white.withOpacity(0.6),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(12),
+                                ),
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ),
                   ),
                 ],
               );

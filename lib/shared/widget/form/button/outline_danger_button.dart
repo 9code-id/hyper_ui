@@ -25,8 +25,8 @@ class QOutlineDangerButton extends StatelessWidget {
             color: Colors.red,
           ),
         ),
-        onPressed: () {
-          if (tapProtected) return;
+        onPressed: () async {
+          if (await isTapProtected()) return;
           onPressed();
         },
         child: Text(

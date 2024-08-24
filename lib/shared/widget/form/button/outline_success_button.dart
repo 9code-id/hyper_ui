@@ -25,8 +25,8 @@ class QOutlineSuccessButton extends StatelessWidget {
             color: primaryColor,
           ),
         ),
-        onPressed: () {
-          if (tapProtected) return;
+        onPressed: () async {
+          if (await isTapProtected()) return;
           onPressed();
         },
         child: Text(
