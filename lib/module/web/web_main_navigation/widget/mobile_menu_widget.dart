@@ -42,8 +42,8 @@ class MobileMenuWidget extends StatelessWidget {
             var subItem = item.children[index];
             return InkWell(
               onTap: () {
-                Navigator.pop(context);
-                controller.updateView(subItem.view!);
+                Get.to(subItem.view!);
+                // controller.updateView(subItem.view!);
               },
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
