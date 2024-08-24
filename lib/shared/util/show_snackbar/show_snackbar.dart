@@ -101,7 +101,10 @@ class QAlert extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          if (body != null)
+          if (body != null) ...[
+            const SizedBox(
+              height: 4.0,
+            ),
             Text(
               body!,
               overflow: TextOverflow.ellipsis,
@@ -111,6 +114,7 @@ class QAlert extends StatelessWidget {
                 fontSize: 14.0,
               ),
             )
+          ],
         ],
       ),
     );
