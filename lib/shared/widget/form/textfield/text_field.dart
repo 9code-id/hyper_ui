@@ -83,7 +83,7 @@ class _QTextFieldState extends State<QTextField> {
             visible = false;
             setState(() {});
           },
-          child: icon = const Icon(Icons.visibility),
+          child: icon = const Icon(Icons.password),
         );
       } else {
         icon = InkWell(
@@ -91,7 +91,7 @@ class _QTextFieldState extends State<QTextField> {
             visible = true;
             setState(() {});
           },
-          child: icon = const Icon(Icons.password),
+          child: icon = const Icon(Icons.visibility),
         );
       }
     }

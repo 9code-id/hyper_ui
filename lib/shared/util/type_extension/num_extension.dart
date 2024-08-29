@@ -19,6 +19,11 @@ extension DoubleExtension on double? {
   String get number {
     return NumberFormat().format((this ?? 0).floor());
   }
+
+  String get number2 {
+    double value = double.parse((this ?? 0).toStringAsFixed(2));
+    return NumberFormat().format((value));
+  }
 }
 
 extension CurrencyStringExtension on String? {
