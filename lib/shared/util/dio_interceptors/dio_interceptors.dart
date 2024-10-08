@@ -15,11 +15,13 @@ class Diointerceptors {
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-          // Do something before request is sent.
-          // If you want to resolve the request with custom data,
-          // you can resolve a `Response` using `handler.resolve(response)`.
-          // If you want to reject the request with a error message,
-          // you can reject with a `DioException` using `handler.reject(dioError)`.
+          //print URL, METHOD, REQUEST BODY, HEADER?
+          printo("URL: ${options.uri}");
+          printo("METHOD: ${options.method}");
+          printo("BODY: ${options.data}");
+          printo("HEADER: ${options.headers}");
+          printo("STATUS CODE: ${options.responseType}");
+          printo("~~~~~~~~~~~~~~~~~~~~~~~~");
           return handler.next(options);
         },
         onResponse: (Response response, ResponseInterceptorHandler handler) {
@@ -30,18 +32,38 @@ class Diointerceptors {
           return handler.next(response);
         },
         onError: (DioException e, ErrorInterceptorHandler handler) {
-          // Do something with response error.
-          // If you want to resolve the request with some custom data,
-          // you can resolve a `Response` object using `handler.resolve(response)`.
-
-          // showInfoDialog("Hello");
-          // const snackBar = SnackBar(
-          //   content: Text('Bad Connection'),
-          // );
-          // ScaffoldMessenger.of(Get.currentContext).showSnackBar(snackBar);
+          printr("URL: ${e.requestOptions.uri}");
+          printr("METHOD: ${e.requestOptions.method}");
+          printr("BODY: ${e.requestOptions.data}");
+          printr("HEADER: ${e.requestOptions.headers}");
+          printr("STATUS CODE: ${e.response?.statusCode}");
+          printr("ERROR: ${e.error}");
+          printr("~~~~~~~~~~~~~~~~~~~~~~~~");
           return handler.next(e);
         },
       ),
     );
   }
 }
+
+class RequestHistory {
+  final String id;
+  final String url;
+  final String method;
+  final Map<dynamic, dynamic> headers;
+  final Map<dynamic, dynamic> body;
+  final int statusCode;
+  final DateTime time;
+
+  RequestHistory({
+    required this.id,
+    required this.url,
+    required this.method,
+    required this.headers,
+    required this.body,
+    required this.statusCode,
+    required this.time,
+  });
+}
+
+List<RequestHistory> requestHistory = [];

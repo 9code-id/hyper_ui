@@ -32,8 +32,8 @@ class MobileMenuWidget extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             childAspectRatio: 1.0 / 0.40,
             crossAxisCount: 2,
-            mainAxisSpacing: 4,
-            crossAxisSpacing: 4,
+            mainAxisSpacing: 8,
+            crossAxisSpacing: 8,
           ),
           itemCount: item.children.length,
           shrinkWrap: true,
@@ -48,11 +48,21 @@ class MobileMenuWidget extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
+                  color: Colors.white,
                   border: Border.all(
                     width: 0.6,
                     color: Colors.grey[300]!,
                   ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8.0),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x19000000),
+                      blurRadius: 24,
+                      offset: Offset(0, 11),
+                    ),
+                  ],
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

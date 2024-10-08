@@ -346,6 +346,7 @@ export 'package:hyper_ui/module/web/web_main_navigation/controller/web_main_navi
 export 'package:hyper_ui/module/web/web_main_navigation/model/menu_item.dart';
 export 'package:hyper_ui/module/web/web_main_navigation/service/web_main_navigation_service.dart';
 export 'package:hyper_ui/module/web/web_main_navigation/view/web_main_navigation_view.dart';
+export 'package:hyper_ui/module/web/web_main_navigation/widget/mobile_menu_widget.dart';
 export 'package:hyper_ui/module/web/web_main_navigation/widget/sidebar_header_item.dart';
 export 'package:hyper_ui/module/web/web_main_navigation/widget/sidebar_menu_item.dart';
 export 'package:hyper_ui/module/web/web_main_navigation/widget/web_main_navigation_sidebar.dart';

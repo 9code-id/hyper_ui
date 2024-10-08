@@ -80,10 +80,10 @@ extension WidgetAnimationExtension on Widget {
       );
   Widget amMoveAndFadeIndex(int index) => animate()
       .move(
-        duration: (100 + (index * 25)).ms,
+        duration: (100 + (index * 50)).ms,
       )
       .fadeIn(
-        duration: (100 + (index * 25)).ms,
+        duration: (100 + (index * 50)).ms,
       );
 }
 
