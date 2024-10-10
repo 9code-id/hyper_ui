@@ -8,47 +8,60 @@ Future<bool> showConfirmationDialog({
   await showDialog<void>(
     context: globalContext,
     builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text(
-          'Confirm',
-          style: TextStyle(
-            color: primaryColor,
-          ),
-        ),
-        content: SingleChildScrollView(
-          child: ListBody(
-            children: <Widget>[
-              Text(message ?? 'Are you sure you want to delete this item?'),
-              const SizedBox(
-                height: 12,
+      return Dialog(
+        child: Wrap(
+          children: [
+            Container(
+              constraints: BoxConstraints(
+                maxWidth: 400.0,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: QButton(
-                      label: 'No',
-                      size: sm,
-                      color: disabledColor,
-                      onPressed: () => Navigator.pop(context),
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    "Confirm",
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      color: primaryColor,
                     ),
                   ),
                   const SizedBox(
-                    width: 12,
+                    height: 8.0,
                   ),
-                  Expanded(
-                    child: QButton(
-                      label: 'Yes',
-                      size: sm,
-                      onPressed: () {
-                        confirm = true;
-                        Navigator.pop(context);
-                      },
-                    ),
+                  Text(message ?? 'Are you sure you want to delete this item?'),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: QButton(
+                          label: 'No',
+                          size: sm,
+                          color: disabledColor,
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Expanded(
+                        child: QButton(
+                          label: 'Yes',
+                          size: sm,
+                          onPressed: () {
+                            confirm = true;
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
       );
     },
