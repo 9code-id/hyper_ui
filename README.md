@@ -4,6 +4,19 @@
 
 ---
 
+# Cara menggunakan HYPER UI sebagai Package
+1. Buat project Flutter baru
+2. Tambahkan package hyper_ui dengan sumber dari git
+```
+dependencies:
+  hyper_ui:
+    git:
+      url: https://github.com/9code-id/hyper_ui
+```
+3. Jika ada state_util.dart, buka isinya dan comment
+4. Buka main.dart, sharusnya kode terkait navigatorKey akan error, perbaiki import-nya agar tidak error
+5. Done
+
 Demo Url:<br/>
 https://hui-demo.vercel.app/
 
