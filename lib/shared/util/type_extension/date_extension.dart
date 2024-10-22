@@ -19,6 +19,10 @@ extension DateTimeExtension on DateTime {
     return DateFormat('y-MM-dd').format(toLocal().toLocal());
   }
 
+  String get yMdkkmmss {
+    return DateFormat('y-MM-dd kk:mm:ss').format(toLocal().toLocal());
+  }
+
   String get d {
     return DateFormat('d').format(toLocal().toLocal());
   }
@@ -55,7 +59,6 @@ extension DateTimeExtension on DateTime {
     return DateFormat('kk:mm:ss').format(toLocal().toLocal());
   }
 
-  
   String get EEEEdMMMy {
     return DateFormat('EEEE, d MMM y').format(toLocal().toLocal());
   }

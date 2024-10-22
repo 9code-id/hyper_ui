@@ -94,10 +94,10 @@ class QAlert extends StatelessWidget {
           Text(
             message,
             overflow: TextOverflow.ellipsis,
-            maxLines: 4,
+            maxLines: 2,
             style: TextStyle(
               color: textColor,
-              fontSize: 16.0,
+              fontSize: 14.0,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -108,10 +108,10 @@ class QAlert extends StatelessWidget {
             Text(
               body!,
               overflow: TextOverflow.ellipsis,
-              maxLines: 4,
+              maxLines: 2,
               style: TextStyle(
                 color: textColor,
-                fontSize: 14.0,
+                fontSize: 12.0,
               ),
             )
           ],

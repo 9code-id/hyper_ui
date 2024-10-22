@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
 class QGridMenu extends StatelessWidget {
+  final int crossAxisCount;
+  final double? childAspectRatio;
   final List<Map<String, dynamic>> items;
 
   const QGridMenu({
     super.key,
     required this.items,
+    this.crossAxisCount = 2,
+    this.childAspectRatio,
   });
 
   @override
@@ -14,30 +18,47 @@ class QGridMenu extends StatelessWidget {
     return Builder(
       builder: (context) {
         return GridView.builder(
-          padding: EdgeInsets.zero,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 1.0,
-            crossAxisCount: 4,
-            mainAxisSpacing: 6,
-            crossAxisSpacing: 6,
+          padding: EdgeInsets.all(20.0),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            childAspectRatio: childAspectRatio ?? (1.0 / 0.5),
+            crossAxisCount: crossAxisCount,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 12,
           ),
           itemCount: items.length,
           shrinkWrap: true,
-          physics: const ScrollPhysics(),
+          physics: ScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             var item = items[index];
             return InkWell(
               onTap: () {
+                if (item["on_tap"] != null) {
+                  item["on_tap"]();
+                  return;
+                }
                 Get.to(item["view"]);
               },
               child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8.0),
+                  ),
+                  border: Border.all(
+                    width: 1.0,
+                    color: Colors.grey[400]!,
+                  ),
+                ),
                 child: Column(
                   children: [
                     Expanded(
-                      child: FittedBox(
-                        child: Icon(
-                          item["icon"],
-                          color: item["color"],
+                      child: Container(
+                        padding: const EdgeInsets.all(6.0),
+                        child: FittedBox(
+                          child: Icon(
+                            item["icon"],
+                            color: Colors.grey[700],
+                          ),
                         ),
                       ),
                     ),
@@ -46,8 +67,11 @@ class QGridMenu extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: item["color"],
+                        color: Colors.grey[700],
                       ),
+                    ),
+                    const SizedBox(
+                      height: 6.0,
                     ),
                   ],
                 ),
@@ -67,49 +91,41 @@ QGridMenu(
     {
       "label": "Product",
       "icon": Icons.store,
-      "color": Colors.red,
       "view": FavoriteView(),
     },
     {
       "label": "Customer",
       "icon": Icons.people,
-      "color": Colors.green,
       "view": FavoriteView(),
     },
     {
       "label": "Supplier",
       "icon": Icons.emoji_people,
-      "color": Colors.blue,
       "view": FavoriteView(),
     },
     {
       "label": "User",
       "icon": Icons.person,
-      "color": Colors.grey,
       "view": FavoriteView(),
     },
     {
       "label": "Report",
       "icon": Icons.list_alt,
-      "color": Colors.purple,
       "view": FavoriteView(),
     },
     {
       "label": "Stock",
       "icon": Icons.numbers,
-      "color": Colors.orange,
       "view": FavoriteView(),
     },
     {
       "label": "Export/Import",
       "icon": Icons.import_contacts,
-      "color": Colors.blueAccent,
       "view": FavoriteView(),
     },
     {
       "label": "Backup/Restore",
       "icon": Icons.backup,
-      "color": Colors.pink,
       "view": FavoriteView(),
     }
   ],

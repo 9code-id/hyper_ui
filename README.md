@@ -1,3 +1,9 @@
+# Rekomendasi SDK
+- Flutter 3.22.2
+- JDK 17.0.12
+
+---
+
 Demo Url:<br/>
 https://hui-demo.vercel.app/
 
