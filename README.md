@@ -4,6 +4,8 @@
 
 ---
 
+<a href="https://hui-demo.vercel.app/">Demo URL</a> | <a href="mailto:denyocr.world@gmail.com">denyocr.world@gmail.com</a>
+
 # Cara menggunakan HYPER UI sebagai Package
 1. Buat project Flutter baru
 2. Tambahkan package hyper_ui dengan sumber dari git
@@ -17,11 +19,6 @@ dependencies:
 4. Buka main.dart, sharusnya kode terkait navigatorKey akan error, perbaiki import-nya agar tidak error
 5. Done
 
-Demo Url:<br/>
-https://hui-demo.vercel.app/
-
-Email:<br/>
-denyocr.world@gmail.com
 
 # Web Support
 Jangan lupa tambahkan ini sebelum </body> di web/index.html
